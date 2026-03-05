@@ -1,4 +1,4 @@
-public class ProyectoSesion02_2 {
+public class Sesion02 {
 
     static void main() {
 
