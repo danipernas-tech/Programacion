@@ -1,7 +1,7 @@
 public class Sesion02 {
 
     static void main() {
-
+        //Sesion 02
         final double NOTA_APROBADO = 5.0;
         final double IVA = 0.10;
         final double PRECIO_BASE = 500.0;
