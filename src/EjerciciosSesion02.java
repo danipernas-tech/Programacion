@@ -71,9 +71,9 @@ public class EjerciciosSesion02 {
 
         //Ejercicio 8
         int var14 = 10;
-        int var15 = 0;
+        int var15 = 3;
         int resu;
-        if (var14 != 0 && var15 != 0) {
+        if (var14 != 0 && (var14 % var15 == 0)) {
             System.out.println(resu = var14 / var15);
         } else {
             System.out.println("No se puede realizar esta división");
@@ -96,6 +96,7 @@ public class EjerciciosSesion02 {
         int varB = varA;
         varB = 20;
         System.out.println(varA); //varB cambia su valor a 20, pero varA mantiene el suyo
+
         //Referencia: guardan dirección de memoria
         String s1 = "Hola";
         String s2 = s1;
