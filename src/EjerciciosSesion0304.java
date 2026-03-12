@@ -4,9 +4,9 @@ public class EjerciciosSesion0304 {
 
     static String nombre;
     static int edad;
-    static String autorizacionMedica;
+    static boolean autorizacionMedica;
     static int numeroEntrenos;
-    static String puedeParticipar;
+    static String participacion;
     static String clasificacionEdad;
 
     static Scanner sc = new Scanner(System.in);
@@ -21,7 +21,7 @@ public class EjerciciosSesion0304 {
     static void leerdatos(){
 
         System.out.println("Dime tu nombre");
-        nombre = sc.next();
+        nombre = sc.nextLine();
 
         System.out.println("Dime tu edad");
         edad = sc.nextInt();
@@ -31,18 +31,18 @@ public class EjerciciosSesion0304 {
         System.out.println("Tienes autorización médica? Si/No");
         String confirmacion = sc.next();
         if (confirmacion.equalsIgnoreCase("sí") || confirmacion.equalsIgnoreCase("si")) {
-            autorizacionMedica = "Si";
+            autorizacionMedica = true;
         } else {
-            autorizacionMedica = "No";
+            autorizacionMedica = false;
         }
 
         System.out.println("Cuantos entrenos has hecho?");
         numeroEntrenos = sc.nextInt();
 
-        if (autorizacionMedica == "Si" && numeroEntrenos >=3 && edad >= 16){
-            puedeParticipar = "Si";
+        if (autorizacionMedica == true && numeroEntrenos >=3 && edad >= 16){
+            participacion = "Si";
         }else {
-            puedeParticipar ="No";
+            participacion ="No";
         }
 
             System.out.println("\nNombre: " + nombre + "\n" + "Edad: " + edad + "\n"
@@ -50,7 +50,7 @@ public class EjerciciosSesion0304 {
     }
 
     static String puedeParticipar (){
-        return puedeParticipar;
+        return participacion;
     }
 
     static void clasificarEdad (){
@@ -58,7 +58,7 @@ public class EjerciciosSesion0304 {
             clasificacionEdad = "menor";
         } else if (edad >= 18 && edad < 40) {
             clasificacionEdad = "adulto";
-        } else {
+        } else if (edad >= 40){
             clasificacionEdad = "veterano";
         }
     }

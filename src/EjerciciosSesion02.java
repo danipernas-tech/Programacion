@@ -58,6 +58,7 @@ public class EjerciciosSesion02 {
         byte resultado = (byte) (a + b); // error
         //Java entiende que al sumar dos numeros byte podemos quedarnos fuera de su rango (-128 a 127)
         //Por eso forzamos a que el resultado sea tipo byte
+        //a + b se promociona automaticamente a int
 
         //Ejercicio 7
         int edad = 20;
@@ -66,14 +67,14 @@ public class EjerciciosSesion02 {
         if (edad >= 18 && tieneCarnet) {
             System.out.println("Tiene carnet");
         } else{
-            System.out.println("No tiene carnet");
+            System.out.println("No puede conducir");
         }
 
         //Ejercicio 8
         int var14 = 10;
         int var15 = 3;
         int resu;
-        if (var14 != 0 && (var14 % var15 == 0)) {
+        if (var15 != 0 && (var14 % var15 == 0)) {
             System.out.println(resu = var14 / var15);
         } else {
             System.out.println("No se puede realizar esta división");
