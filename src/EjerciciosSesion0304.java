@@ -45,7 +45,7 @@ public class EjerciciosSesion0304 {
             participacion ="No";
         }
 
-            System.out.println("\nNombre: " + nombre + "\n" + "Edad: " + edad + "\n"
+        System.out.println("\nNombre: " + nombre + "\n" + "Edad: " + edad + "\n"
                 + "Autorización Médica: " + autorizacionMedica + "\n" + "Numero de entrenos: " + numeroEntrenos);
     }
 
@@ -62,7 +62,6 @@ public class EjerciciosSesion0304 {
             clasificacionEdad = "veterano";
         }
     }
-
 
     static void mostrarInforme(){
         System.out.println("\nINFORME");
