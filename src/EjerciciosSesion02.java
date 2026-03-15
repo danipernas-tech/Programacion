@@ -1,86 +1,96 @@
 public class EjerciciosSesion02 {
 
+
+    static final double IVA = 0.21;
+    static final int producto = 100;
+
     static void main() {
-        //Ejercicio 1
-        //Declara una constante llamada IVA con valor 0.21 (21%) y calcula el precio final
-        //de un producto que cuesta 100€.
-        final double IVA = 0.21;
-        double PRODUCTO = 100.0;
-        double PRECIO_FINAL= PRODUCTO * IVA + PRODUCTO;
-        System.out.println("El precio con IVA es de: " + PRECIO_FINAL+ "€");
 
-        //Ejercicio 2
-        //Declara una variable de cada tipo primitivo:
-        boolean booleana = true;
-        byte un_byte = 100;
-        short un_short = 10000;
-        int un_int = 10;
-        long un_long = 100000000;
-        float un_float = 9.8f;
-        double un_double = 5.6;
-        char character = 'D';
-        System.out.println(booleana + "\n" + un_byte + "\n" + un_double + "\n" + un_float + "\n" + un_int + "\n" + un_long + "\n" + un_short + "\n" + character);
+        System.out.println("Precio con IVA: " + ejercicio01() + "€");
+        ejercicio02();
+        ejercicio04();
+        ejercicio05();
+        ejercicio06();
+        ejercicio07();
+        ejercicio08();
+        ejercicio10();
+    }
 
-        //Ejercicio 3
-        //Indica el tipo de cada literal y crea una variable adecuada para cada uno:
-        int var1 = 10; //primitivo
-        double var2 = 10.0; //primitivo
-        long var3 = 10L; //primitivo
-        float var4 = 10.0f; //primitivo
-        char var5 = 'A'; //primitivo
-        String var6 = "Hola"; //referencia
-        boolean var7 = true; //primitivo
+    static double ejercicio01(){
+        double precioFinal = producto + (producto * IVA);
+        return precioFinal;
+    }
 
-        //Ejercicio 4
-        //Escribe un programa que muestre la diferencia entre:
-        int var8 = var1 / 3; // (3) Divide 2 enteros con resultado entero
-        double var9 = var2 / 3; // (3)
-        double var10 = var1 / 3;
-        System.out.println(var8); //Resu: 3
-        System.out.println(var9); //Resu 3.333333333335
-        System.out.println(var10); //Resu 3.0
+    static void ejercicio02(){
+        /// Primitivos
+        boolean booleanVar = true;
+        byte byteVar = 127;
+        short shortVar = 10000;
+        int intVar = 50;
+        long longVar = 5000000;
+        float floatVar = 2.5f;
+        double doubleVar = 88.8;
+        char charVar = 'A';
+        System.out.println(booleanVar + "\n" + byteVar + "\n" + shortVar + "\n" + intVar + "\n" + longVar + "\n" + floatVar + "\n" + doubleVar + "\n" + charVar);
+    }
 
-        //Ejercicio 5
-        //Casteo explícito
-        double var11 = 9.75;
-        int var12 = (int) var11;
-        byte var13 = (byte) var11;
-        System.out.println(var11 + "\n" + var12 + "\n" + var13);
-        //Perddemos la parte decimal, sin redondeo
-        //Perdemos precisión e infroamción
-        //En este caso, el número 9 cabe
-        // perfectamente en un byte (que aguanta de -128 a 127)
+    static void ejercicio03(){
+        int var01 = 10;
+        double var02 = 10.0;
+        long var03 = 10L;
+        float var04 = 10.0F;
+        char var05 = 'A';
+        String var06 = "Hola"; ///Es referencia, guarda una ruta de memoria
+        boolean var07 = true;
+    }
 
-        //Ejercicio 6
-        //Completa eñ siguiente código
+    static void ejercicio04(){
+        // División entera
+        int resultado1 = 10 /3; //Division entero por entero, se guarda en una variable de entero, no se opera ni se muestra con deimales
+        // División decimal
+        double resultado2 = 10.0/3; //División decimal con numero entero, Java pasa el int 3 a 3.0 internamente para la operacion y guardar decimal en el resultado
+        // División forzada o casteo
+        double resultado3 = (double) 10/3; //(double) tiene prioridad en la operación, convierte el 10 y 3 a 10.0 y 3.0, lo cual el resu es double
+        System.out.println(resultado1 + "\n" + resultado2 + "\n" + resultado3);
+    }
+
+    static void ejercicio05(){
+        double numero = 9.75;
+        int numero2 = (int) numero;
+        byte numero3 = (byte)numero;
+        System.out.println(numero + "\n" + numero2 + "\n" + numero3);
+    }
+    static void ejercicio06(){
         byte a = 10;
         byte b = 20;
-        byte resultado = (byte) (a + b); // error
-        //Java entiende que al sumar dos numeros byte podemos quedarnos fuera de su rango (-128 a 127)
-        //Por eso forzamos a que el resultado sea tipo byte
+        byte resultado = (byte) (a + b);
+        System.out.println(resultado);
         //a + b se promociona automaticamente a int
+    }
 
-        //Ejercicio 7
+    static void ejercicio07(){
         int edad = 20;
         boolean tieneCarnet = true;
-
-        if (edad >= 18 && tieneCarnet) {
-            System.out.println("Tiene carnet");
-        } else{
+        if (edad >= 18 && tieneCarnet){
+            System.out.println("Puede conducir");
+        }else{
             System.out.println("No puede conducir");
         }
+    }
 
-        //Ejercicio 8
-        int var14 = 10;
-        int var15 = 3;
-        int resu;
-        if (var15 != 0 && (var14 % var15 == 0)) {
-            System.out.println(resu = var14 / var15);
-        } else {
-            System.out.println("No se puede realizar esta división");
+    static void ejercicio08(){
+        int numero = 8;
+        int divisor = 3;
+        if (divisor != 0 && (numero%divisor==0)){
+            System.out.println(divisor + " es divisor de " + numero);
+        } else if (divisor==0) {
+            System.out.println("No se puede dividir entre 0");
+        }else {
+            System.out.println("Se puede dividir pero, " + divisor + " no es divisor de " + numero);
         }
+    }
 
-        //Ejercicio 9
+    //Ejercicio 9
         /*
         int x = 10;
         if (x == 10) {
@@ -88,9 +98,9 @@ public class EjerciciosSesion02 {
         }
         System.out.println(y);
          */
-        //La variable y vive en la condición lo cual no puede ser llamada fuera de ella
+    //La variable y vive en la condición lo cual no puede ser llamada fuera de ella
 
-        //Ejercicio 10
+    static void ejercicio10(){
         //Primitivo: guardan valor real
 
         int varA = 10;
@@ -103,11 +113,5 @@ public class EjerciciosSesion02 {
         String s2 = s1;
         s2 = "Adiós";
         System.out.println(s1); //s2 apunta a "Adiós" pero s1 sigue apuntando a "Hola"
-
-
     }
-
-
-
-
 }

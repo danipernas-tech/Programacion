@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class EjerciciosSesion0304 {
+public class EjerciciosSesion04_1 {
 
     static String nombre;
     static int edad;
@@ -28,12 +28,18 @@ public class EjerciciosSesion0304 {
 
         sc.nextLine(); // limpiar buffer
 
+        String autorizacion;
         System.out.println("Tienes autorización médica? Si/No");
         String confirmacion = sc.next();
         if (confirmacion.equalsIgnoreCase("sí") || confirmacion.equalsIgnoreCase("si")) {
             autorizacionMedica = true;
         } else {
             autorizacionMedica = false;
+        }
+        if(autorizacionMedica == true){
+            autorizacion = "Si";
+        }else {
+            autorizacion = "No";
         }
 
         System.out.println("Cuantos entrenos has hecho?");
@@ -46,7 +52,7 @@ public class EjerciciosSesion0304 {
         }
 
         System.out.println("\nNombre: " + nombre + "\n" + "Edad: " + edad + "\n"
-                + "Autorización Médica: " + autorizacionMedica + "\n" + "Numero de entrenos: " + numeroEntrenos);
+                + "Autorización Médica: " + autorizacion + "\n" + "Numero de entrenos: " + numeroEntrenos);
     }
 
     static String puedeParticipar (){
@@ -55,11 +61,11 @@ public class EjerciciosSesion0304 {
 
     static void clasificarEdad (){
         if (edad < 18){
-            clasificacionEdad = "menor";
+            clasificacionEdad = "Menor";
         } else if (edad >= 18 && edad < 40) {
-            clasificacionEdad = "adulto";
+            clasificacionEdad = "Adulto";
         } else if (edad >= 40){
-            clasificacionEdad = "veterano";
+            clasificacionEdad = "Veterano";
         }
     }
 
